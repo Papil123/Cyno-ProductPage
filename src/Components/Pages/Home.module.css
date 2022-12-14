@@ -1,0 +1,42 @@
+.toolbar{
+    display: flex;
+    height: 70px;
+    padding: 20px;
+    border: 1px solid grey;
+    justify-content: space-around;
+}
+
+.search{
+    width: 400px;
+    padding: 10px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(206, 206, 206);
+    color: black;
+    
+}
+.menu{
+    background-color: rgb(50, 50, 237);
+}
+
+.table{
+    border: 1px solid black;
+    margin: auto;
+    margin-top: 100px;
+}
+.table td{
+    border: 1px solid black;
+
+}
+th{
+    width: 150px;
+    border: 1px solid black;
+}
+tr{
+    border: 1px solid black;
+}
+
+.modal input{
+ width: 200px;
+ height: 40px;
+}

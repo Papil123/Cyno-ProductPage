@@ -122,6 +122,8 @@ const handleSwitch =()=>{
 }
 
 useEffect(()=>{
+      var isAuth=   JSON.parse(localStorage.getItem("isAuth"))
+
    getData()
 //    console.log(isAuth)
 },[])

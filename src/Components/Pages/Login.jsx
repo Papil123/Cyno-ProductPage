@@ -10,24 +10,24 @@ import {
     useColorModeValue,
   } from '@chakra-ui/react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
-
-import { IsAuthState } from '../Atom'
 
 const Login = () => {
     const [userName,setUserName] = useState("")
     const [password , setPassword] = useState("")
-    const [ isAuth,setIsAuth] = useRecoilState(IsAuthState)
+    const [ isAuth,setIsAuth] = useState(false)
     const navigate = useNavigate()
+
+    
     const handleLogin=()=>{
         let Uname = JSON.parse(localStorage.getItem("userName"))
         let Pword = JSON.parse(localStorage.getItem("password"))
         if(Uname===userName&&Pword===password){
                localStorage.setItem("isAuth" , JSON.stringify(true))
+               setIsAuth(true)
                navigate("/")
         }
-
-        console.log(Uname,Pword)
+        
+        // console.log(Uname,Pword)
     }
   return (
     <div>
@@ -70,8 +70,14 @@ const Login = () => {
             _hover={{
               bg: 'blue.500',
             }}
-            onClick={handleLogin}  >
-            Login
+            onClick={()=>{
+                handleLogin();
+
+            }}  >
+                <Link to={"/"}  >
+                Login
+                </Link>
+            
           </Button>
           <p>If new here click on  <Link style={{textDecoration:"underline"}} to="/signup" >Sign-Up</Link></p>
         </Stack>
